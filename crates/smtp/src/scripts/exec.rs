@@ -22,6 +22,7 @@ impl<T: SessionStream> Session<T> {
         let mut params = ScriptParameters::new()
             .set_variable("remote_ip", self.data.remote_ip.to_string())
             .set_variable("remote_ip.reverse", self.data.remote_ip.to_reverse_name())
+            .set_variable("local_ip", self.data.local_ip.to_string())
             .set_variable("helo_domain", self.data.helo_domain.as_str().to_lowercase())
             .set_variable(
                 "authenticated_as",
